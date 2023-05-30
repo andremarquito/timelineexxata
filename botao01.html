@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tem alguém usando o Timeline?</title>
+  <style>
+    body {
+      background-color: red;
+      color: white;
+      font-family: "Roboto", sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tem alguém utilizando o timeline?</h1>
+    <button id="status-btn" onclick="toggleButton()">Está usando?</button>
+    <p id="last-click-time"></p>
+  </div>
+
+  <script>
+    function toggleButton() {
+      var button = document.getElementById("status-btn");
+      var lastClickTime = document.getElementById("last-click-time");
+      var currentTime = new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo", dateStyle: "short", timeStyle: "medium" });
+
+      if (button.innerText === "Está usando?") {
+        button.innerText = "Alguém está usando";
+        lastClickTime.innerText = "Último usuário em: " + currentTime;
+      } else {
+        button.innerText = "Está usando?";
+        lastClickTime.innerText = "";
+      }
+    }
+  </script>
+</body>
+</html>
+
